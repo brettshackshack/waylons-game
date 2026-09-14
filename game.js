@@ -457,3 +457,4 @@ function restartGame() {
     startGame();
 
 }
+index.html
