@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Stage: Rhythm Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+    <!-- CHARACTER SELECT -->
+    <div id="menu">
+        <h1>ALIEN RHYTHM BATTLE</h1>
+        <p>Choose your fighter</p>
+
+        <div class="characters">
+
+            <button onclick="chooseCharacter('Till')">
+                <div class="character till">T</div>
+                <h2>Till</h2>
+                <p>Balanced</p>
+            </button>
+
+            <button onclick="chooseCharacter('Nova')">
+                <div class="character nova">N</div>
+                <h2>Nova</h2>
+                <p>Fast</p>
+            </button>
+
+            <button onclick="chooseCharacter('Luna')">
+                <div class="character luna">L</div>
+                <h2>Luna</h2>
+                <p>Accurate</p>
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- GAME -->
+    <div id="game" class="hidden">
+
+        <div class="hud">
+            <span>Score: <b id="score">0</b></span>
+            <span>Combo: <b id="combo">0</b></span>
+            <span>Misses: <b id="misses">0</b>/10</span>
+        </div>
+
+        <div class="health-container">
+            <div id="health"></div>
+        </div>
+
+        <h2 id="playerName">Till</h2>
+
+        <div id="battle">
+
+            <div id="alien">
+                👽
+                <div id="alienName">ALIEN</div>
+            </div>
+
+            <div id="player">
+                <div id="playerFace">T</div>
+            </div>
+
+            <div id="notes"></div>
+
+            <div class="targets">
+                <div data-key="a">A</div>
+                <div data-key="s">S</div>
+                <div data-key="k">K</div>
+                <div data-key="l">L</div>
+            </div>
+
+        </div>
+
+        <div id="judgement">READY</div>
+
+        <audio id="music" loop>
+            <source src="blink-gone.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+
+
+    <!-- LOSE SCREEN -->
+    <div id="loseScreen" class="hidden">
+
+        <h1>YOU LOST</h1>
+
+        <div class="blastScene">
+
+            <div class="alienBlast">👽</div>
+
+            <div class="laser"></div>
+
+            <div id="defeatedPlayer">T</div>
+
+        </div>
+
+        <h2>THE ALIEN BLASTED YOU!</h2>
+
+        <p>Final Score:</p>
+        <h2 id="finalScore">0</h2>
+
+        <button onclick="restartGame()">
+            TRY AGAIN
+        </button>
+
+    </div>
+
+
+<script src="game.js"></script>
+
+</body>
+</html>
